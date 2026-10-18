@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios de odontología estética y rehabilitación oral en Popayán.">
+  <title>Odontología Camilo Castillo | Popayán</title>
+  <style>
+    :root {
+      --gold: #b89654;
+      --dark: #25231f;
+      --cream: #faf8f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee8dc;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .brand span { color: var(--gold); }
+
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: var(--cream);
+      padding: 85px 8%;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto 30px;
+      color: #68645d;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    section { padding: 65px 8%; }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #68645d;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .service {
+      border: 1px solid #e9e2d6;
+      padding: 26px;
+      border-radius: 5px;
+    }
+
+    .service h3 { font-size: 19px; }
+    .service p { color: #68645d; font-size: 14px; }
+
+    .contact {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      font-size: 12px;
+      color: #68645d;
+    }
+
+    @media (max-width: 700px) {
+      header { flex-direction: column; }
+      nav a { margin: 0 7px; }
+      .hero { padding: 60px 6%; }
+      section { padding: 45px 6%; }
+      .services { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">ODONTOLOGÍA <span>CAMILO CASTILLO</span></div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Odontología estética · Popayán</div>
+      <h1>Una sonrisa que refleje tu esencia.</h1>
+      <p>
+        Atención odontológica personalizada en estética dental
+        y rehabilitación oral, con un enfoque natural y conservador.
+      </p>
+      <a class="button" href="#contacto">Solicitar valoración</a>
+    </section>
+
+    <section id="servicios">
+      <h2>Mis servicios</h2>
+      <p class="intro">
+        Planes de tratamiento personalizados según tus necesidades,
+        expectativas y condiciones clínicas.
+      </p>
+
+      <div class="services">
+        <article class="service">
+          <h3>Diseño de sonrisa</h3>
+          <p>
+            Restauraciones estéticas en resina de alta estética,
+            con planificación individualizada y enfoque conservador
+            cuando esté clínicamente indicado.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Rehabilitación oral</h3>
+          <p>
+            Alternativas restauradoras para recuperar función,
+            anatomía y estética de los dientes.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Carillas e incrustaciones</h3>
+          <p>
+            Opciones directas e indirectas seleccionadas
+            de acuerdo con el diagnóstico y cada caso clínico.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <h2>Hablemos de tu sonrisa</h2>
+      <p class="intro">
+        Escríbeme para conocer las opciones de valoración
+        y recibir información sobre los tratamientos.
+      </p>
+      <br>
+      <!-- Reemplaza el número de ejemplo por tu WhatsApp -->
+      <a class="button"
+         href="https://wa.me/57TU_NUMERO"
+         target="_blank"
+         rel="noopener noreferrer">
+        Contactar por WhatsApp
+      </a>
+      <p>Popayán, Cauca, Colombia</p>
+    </section>
+  </main>
+
+  <footer>
+    Odontología Camilo Castillo · Popayán, Colombia
+    <p>La indicación de cada tratamiento requiere valoración clínica.</p>
+  </footer>
+
+</body>
+</html>
