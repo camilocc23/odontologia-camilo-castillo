@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,99 +8,79 @@
   <meta name="description" content="Servicios de odontología estética y rehabilitación oral en Popayán.">
   <title>Odontología Camilo Castillo | Popayán</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
-
     :root {
-      --gold: #a9874c;
-      --dark: #292720;
-      --muted: #706d65;
-      --cream: #f8f6f0;
-      --line: #e8e2d6;
-      --tooth: #EBDDC0;
-      --serif: 'Playfair Display', 'Iowan Old Style', 'Baskerville', Georgia, serif;
-      --sans: 'DM Sans', 'Avenir Next', Avenir, sans-serif;
+      --gold: #b89654;
+      --dark: #25231f;
+      --cream: #faf8f3;
+      --tooth: #EBDDC0; /* color del diente en la guía de color */
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: var(--sans);
+      font-family: Arial, sans-serif;
       color: var(--dark);
-      line-height: 1.75;
-      font-size: 15px;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
 
     header {
-      padding: 18px 7%;
+      padding: 22px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid #eee8dc;
       gap: 16px;
-      background: rgba(255,255,255,.94);
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-    }
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
 
-    .brand img {
-      display: block;
-      width: 220px;
-      max-height: 84px;
-      object-fit: contain;
-    }
+.brand img {
+  display: block;
+  width: 190px;
+  max-height: 75px;
+  object-fit: contain;
+}
+
+    .brand span { color: var(--gold); }
 
     nav a {
       color: var(--dark);
       text-decoration: none;
-      margin-left: 26px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: color .2s ease;
+      margin-left: 18px;
+      font-size: 14px;
     }
 
-    nav a:hover { color: var(--gold); }
-
     .hero {
-      background: radial-gradient(ellipse at 50% 0%, #fff 0, var(--cream) 72%);
-      padding: clamp(76px, 11vw, 132px) 8%;
+      background: var(--cream);
+      padding: 85px 8%;
       text-align: center;
     }
 
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: .22em;
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    h1, h2, #shadeName, .case h3 {
-      font-family: var(--serif);
-      font-weight: 400;
+      letter-spacing: 3px;
+      font-size: 12px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-      max-width: 850px;
-      margin: 22px auto;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 20px auto;
     }
 
     .hero p {
-      max-width: 570px;
-      margin: 0 auto 34px;
-      color: var(--muted);
-      font-size: 16px;
+      max-width: 580px;
+      margin: 0 auto 30px;
+      color: #68645d;
     }
 
     .button {
@@ -107,71 +88,53 @@
       background: var(--gold);
       color: white;
       text-decoration: none;
-      padding: 15px 27px;
-      border-radius: 2px;
-      font: 600 11px var(--sans);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      transition: background .2s ease, transform .2s ease;
+      padding: 14px 24px;
+      border-radius: 3px;
+      font-weight: bold;
     }
 
-    .button:hover {
-      background: #8f713e;
-      transform: translateY(-1px);
-    }
-
-    section { padding: clamp(58px, 8vw, 88px) 8%; }
+    section { padding: 65px 8%; }
 
     h2 {
-      font-size: clamp(32px, 4vw, 43px);
-      line-height: 1.2;
-      letter-spacing: -.02em;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: normal;
       text-align: center;
-      margin: 0 0 16px;
     }
 
     .intro {
       text-align: center;
       max-width: 650px;
       margin: 0 auto;
-      color: var(--muted);
+      color: #68645d;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 42px;
+      gap: 22px;
+      margin-top: 35px;
     }
 
     .service {
-      border: 1px solid var(--line);
-      padding: 30px;
-      border-radius: 3px;
-      background: #fff;
+      border: 1px solid #e9e2d6;
+      padding: 26px;
+      border-radius: 5px;
     }
 
-    .service h3 {
-      font: 500 20px var(--serif);
-      margin: 0 0 10px;
-    }
+    .service h3 { font-size: 19px; }
+    .service p { color: #68645d; font-size: 14px; }
 
-    .service p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 0;
-    }
-
-    .shade-guide, .contact { background: var(--cream); }
+    /* GUÍA DE COLOR DENTAL */
+    .shade-guide { background: var(--cream); }
 
     .shade-box {
       max-width: 420px;
-      margin: 38px auto 0;
+      margin: 35px auto 0;
       background: white;
-      border: 1px solid var(--line);
-      border-radius: 3px;
-      padding: 30px 24px 26px;
+      border: 1px solid #e9e2d6;
+      border-radius: 5px;
+      padding: 28px 24px 24px;
       text-align: center;
     }
 
@@ -181,33 +144,29 @@
       max-width: 190px;
       height: auto;
       margin: 0 auto 10px;
-      filter: drop-shadow(0 14px 18px rgba(120,90,30,.16));
+      filter: drop-shadow(0 14px 18px rgba(120, 90, 30, 0.18));
     }
 
-    .tooth .body {
-      fill: var(--tooth);
-      transition: fill .5s ease;
-    }
-
-    .tooth .shine { fill: #fff; opacity: .55; }
+    .tooth .body { fill: var(--tooth); transition: fill 0.5s ease; }
+    .tooth .shine { fill: #fff; opacity: 0.55; }
 
     .shades {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 11px;
-      margin: 20px 0 18px;
+      gap: 10px;
+      margin: 18px 0 16px;
     }
 
     .shades button {
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      border: 2px solid var(--line);
-      font: 600 10px var(--sans);
+      border: 2px solid #e9e2d6;
+      font: bold 12px Arial, sans-serif;
       color: #4a4130;
       cursor: pointer;
-      transition: transform .2s, border-color .2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .shades button:hover { transform: scale(1.08); }
@@ -217,51 +176,52 @@
       box-shadow: 0 0 0 3px white, 0 0 0 5px var(--gold);
     }
 
-    .shades button:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-    }
+    .shades button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
     #shadeName {
-      font-size: 23px;
+      font-family: Georgia, serif;
+      font-size: 21px;
       margin: 0;
     }
 
     #shadeText {
-      color: var(--muted);
-      font-size: 13px;
+      color: #68645d;
+      font-size: 14px;
       margin: 4px auto 0;
       max-width: 320px;
       min-height: 3.4em;
     }
 
     .shade-note {
-      font-size: 11px;
-      color: var(--muted);
+      font-size: 12px;
+      color: #68645d;
       text-align: center;
       margin: 18px auto 0;
       max-width: 520px;
     }
 
+    /* GALERÍA DE CASOS CLÍNICOS */
     .cases {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 42px;
+      gap: 28px;
+      margin-top: 35px;
     }
 
     .case {
-      border: 1px solid var(--line);
-      border-radius: 3px;
-      padding: 20px;
+      border: 1px solid #e9e2d6;
+      border-radius: 5px;
+      padding: 18px;
       background: white;
       min-width: 0;
     }
 
     .case h3 {
-      font-size: 22px;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 21px;
       text-align: center;
-      margin: 3px 0 18px;
+      margin-top: 5px;
     }
 
     .comparison {
@@ -270,73 +230,55 @@
       gap: 10px;
     }
 
-    .photo { position: relative; min-width: 0; }
+    .photo {
+      position: relative;
+      min-width: 0;
+    }
 
     .photo img {
       display: block;
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      border-radius: 2px;
+      border-radius: 4px;
     }
 
     .photo span {
       display: block;
       text-align: center;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .16em;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
       color: var(--gold);
-      padding-top: 10px;
+      padding-top: 8px;
     }
 
     .case p {
-      font-size: 12px;
-      color: var(--muted);
+      font-size: 14px;
+      color: #68645d;
       text-align: center;
-      margin: 14px 0 2px;
+      margin-bottom: 5px;
     }
 
-    .contact .intro { margin-bottom: 28px; }
-
-    .contact > p:last-child {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 18px;
+    .contact {
+      background: var(--cream);
+      text-align: center;
     }
 
     footer {
       padding: 25px;
       text-align: center;
-      font-size: 11px;
-      color: var(--muted);
+      font-size: 12px;
+      color: #68645d;
     }
-
-    footer p { margin: 5px 0 0; }
 
     @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        padding: 16px 5%;
-      }
-
-      nav a {
-        margin: 0 9px;
-        font-size: 10px;
-      }
-
-      .hero { padding: 68px 6%; }
-      section { padding: 55px 6%; }
-      .services, .cases { grid-template-columns: 1fr; }
-      .service { padding: 25px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
+      header { flex-direction: column; }
+      nav a { margin: 0 7px; }
+      .hero { padding: 60px 6%; }
+      section { padding: 45px 6%; }
+      .services { grid-template-columns: 1fr; }
+      .cases { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -344,8 +286,8 @@
 
   <header>
     <a class="brand" href="#inicio">
-      <img src="images/logo.png" alt="Odontología Camilo Castillo">
-    </a>
+  <img src="images/logo.png" alt="Odontología Camilo Castillo">
+</a>
     <nav>
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
@@ -393,7 +335,7 @@
           <h3>Blanqueamiento Dental</h3>
           <p>
             Opcion ideal para un cambio notable
-            sin desgastes, ni sensibilidad dental,
+            sin desgastes, ni sensibilidad dental, 
             logra recuperar el tono blanco natural de tus dientes.
           </p>
         </article>
@@ -435,6 +377,7 @@
       </p>
 
       <div class="cases">
+
         <!-- CASO 1 -->
         <article class="case">
           <h3>Diseño de sonrisa en resina</h3>
@@ -486,6 +429,7 @@
             necesidades de cada paciente.
           </p>
         </article>
+
       </div>
     </section>
 
@@ -508,7 +452,7 @@
   </main>
 
   <footer>
-    Camilo Castillo Odontología · Popayán, Colombia
+    Camilo Castillo Odontología  · Popayán, Colombia
     <p>La indicación de cada tratamiento requiere valoración clínica.</p>
   </footer>
 
