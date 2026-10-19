@@ -32,10 +32,17 @@
     }
 
     .brand {
-      font-size: 17px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 190px;
+  max-height: 75px;
+  object-fit: contain;
+}
 
     .brand span { color: var(--gold); }
 
@@ -116,6 +123,66 @@
     .service h3 { font-size: 19px; }
     .service p { color: #68645d; font-size: 14px; }
 
+    /* GALERÍA DE CASOS CLÍNICOS */
+    .cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 35px;
+    }
+
+    .case {
+      border: 1px solid #e9e2d6;
+      border-radius: 5px;
+      padding: 18px;
+      background: white;
+      min-width: 0;
+    }
+
+    .case h3 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 21px;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .photo {
+      position: relative;
+      min-width: 0;
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .photo span {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--gold);
+      padding-top: 8px;
+    }
+
+    .case p {
+      font-size: 14px;
+      color: #68645d;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
     .contact {
       background: var(--cream);
       text-align: center;
@@ -134,13 +201,16 @@
       .hero { padding: 60px 6%; }
       section { padding: 45px 6%; }
       .services { grid-template-columns: 1fr; }
+      .cases { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="brand">ODONTOLOGÍA <span>CAMILO CASTILLO</span></div>
+    <a class="brand" href="#inicio">
+  <img src="images/logo.png" alt="Odontología Camilo Castillo">
+</a>
     <nav>
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
@@ -148,8 +218,8 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="eyebrow">Odontología estética · Popayán</div>
+    <section class="hero" id="inicio">
+      <div class="eyebrow">Odontología estética & restaurativa · Popayán</div>
       <h1>Una sonrisa que refleje tu esencia.</h1>
       <p>
         Atención odontológica personalizada en estética dental
@@ -169,40 +239,108 @@
         <article class="service">
           <h3>Diseño de sonrisa</h3>
           <p>
-            Restauraciones estéticas en resina de alta estética,
+            Carillas en resina de alta estética muy similar a la cerámica,
             con planificación individualizada y enfoque conservador
-            cuando esté clínicamente indicado.
+            según los gustos y las necesidades de cada paciente.
           </p>
         </article>
 
         <article class="service">
           <h3>Rehabilitación oral</h3>
           <p>
-            Alternativas restauradoras para recuperar función,
-            anatomía y estética de los dientes.
+            Te orientamos en diferentes alternativas
+            de tratamiento para recuperar función,
+            anatomía y estética de todos tus dientes.
           </p>
         </article>
 
         <article class="service">
-          <h3>Carillas e incrustaciones</h3>
+          <h3>Blanqueamiento Dental</h3>
           <p>
-            Opciones directas e indirectas seleccionadas
-            de acuerdo con el diagnóstico y cada caso clínico.
+            Opcion ideal para un cambio notable
+            sin desgastes, ni sensibilidad dental, 
+            logra recuperar el tono blanco natural de tus dientes.
           </p>
         </article>
+      </div>
+    </section>
+
+    <!-- CASOS CLÍNICOS: ANTES Y DESPUÉS -->
+    <section id="casos">
+      <h2>Transformaciones de sonrisas</h2>
+
+      <p class="intro">
+        Cada sonrisa es única. Conoce algunos casos clínicos
+        realizados con un enfoque personalizado y conservador.
+      </p>
+
+      <div class="cases">
+
+        <!-- CASO 1 -->
+        <article class="case">
+          <h3>Diseño de sonrisa en resina</h3>
+
+          <div class="comparison">
+            <div class="photo">
+              <img src="images/caso1-antes.jpg"
+                   alt="Antes del tratamiento odontológico"
+                   loading="lazy">
+              <span>ANTES</span>
+            </div>
+
+            <div class="photo">
+              <img src="images/caso1-despues.jpg"
+                   alt="Después del tratamiento odontológico"
+                   loading="lazy">
+              <span>DESPUÉS</span>
+            </div>
+          </div>
+
+          <p>
+            Resultado individualizado según las condiciones
+            clínicas y las expectativas del paciente.
+          </p>
+        </article>
+
+        <!-- CASO 2 -->
+        <article class="case">
+          <h3>Rehabilitación estética</h3>
+
+          <div class="comparison">
+            <div class="photo">
+              <img src="images/caso2-antes.jpg"
+                   alt="Antes de la rehabilitación estética"
+                   loading="lazy">
+              <span>ANTES</span>
+            </div>
+
+            <div class="photo">
+              <img src="images/caso2-despues.jpg"
+                   alt="Después de la rehabilitación estética"
+                   loading="lazy">
+              <span>DESPUÉS</span>
+            </div>
+          </div>
+
+          <p>
+            Tratamiento planificado de acuerdo con las
+            necesidades de cada paciente.
+          </p>
+        </article>
+
       </div>
     </section>
 
     <section class="contact" id="contacto">
       <h2>Hablemos de tu sonrisa</h2>
       <p class="intro">
-        Escríbeme para conocer las opciones de valoración
-        y recibir información sobre los tratamientos.
+        Escríbeme para agendar tu valoración
+        y recibir información sobre tu tratamiento ideal.
       </p>
       <br>
       <!-- Reemplaza el número de ejemplo por tu WhatsApp -->
       <a class="button"
-         href="https://wa.me/57TU_NUMERO"
+         href="https://wa.me/573127333622"
          target="_blank"
          rel="noopener noreferrer">
         Contactar por WhatsApp
@@ -212,7 +350,7 @@
   </main>
 
   <footer>
-    Odontología Camilo Castillo · Popayán, Colombia
+    Camilo Castillo Odontología  · Popayán, Colombia
     <p>La indicación de cada tratamiento requiere valoración clínica.</p>
   </footer>
 
