@@ -1,495 +1,720 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Servicios de odontología estética y rehabilitación oral en Popayán.">
-  <title>Odontología Camilo Castillo | Popayán</title>
-  <style>
-    :root {
-      --gold: #b89654;
-      --dark: #25231f;
-      --cream: #faf8f3;
-      --tooth: #EBDDC0; /* color del diente en la guía de color */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Odontología estética y rehabilitación oral en Popayán. Atención personalizada con un enfoque natural y conservador.">
+<meta name="theme-color" content="#10100f">
+<title>Camilo Castillo | Odontología estética en Popayán</title>
 
-    * { box-sizing: border-box; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--dark);
-      line-height: 1.6;
-    }
+<style>
+:root {
+  --ink: #11110f;
+  --ink-soft: #1b1a17;
+  --gold: #c6a46a;
+  --gold-light: #dfc695;
+  --paper: #f8f6f1;
+  --white: #fff;
+  --muted: #a8a49b;
+  --line: rgba(198, 164, 106, .25);
+  --tooth: #EBDDC0;
+}
 
-    header {
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee8dc;
-      gap: 16px;
-    }
+* { box-sizing: border-box; }
 
-    .brand {
-  display: inline-flex;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+
+.topline {
+  height: 3px;
+  background: linear-gradient(90deg, #8c6b38, var(--gold-light), #8c6b38);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(17, 17, 15, .97);
+  color: white;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.nav-wrap {
+  max-width: 1240px;
+  margin: auto;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
   align-items: center;
   text-decoration: none;
 }
 
 .brand img {
   display: block;
-  width: 190px;
-  max-height: 75px;
+  width: 185px;
+  max-height: 68px;
   object-fit: contain;
 }
 
-    .brand span { color: var(--gold); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 
-    nav a {
-      color: var(--dark);
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
-    }
+.nav-links a {
+  text-decoration: none;
+  color: #ece9e1;
+  font-size: 13px;
+  letter-spacing: .04em;
+  transition: color .2s;
+}
 
-    .hero {
-      background: var(--cream);
-      padding: 85px 8%;
-      text-align: center;
-    }
+.nav-links a:hover { color: var(--gold-light); }
 
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-    }
+.nav-links .nav-cta {
+  padding: 10px 16px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+}
 
-    h1 {
-      font-family: Georgia, serif;
-      font-weight: normal;
-      font-size: clamp(36px, 6vw, 62px);
-      line-height: 1.15;
-      max-width: 800px;
-      margin: 20px auto;
-    }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: white;
+  padding: 8px 11px;
+  font: inherit;
+}
 
-    .hero p {
-      max-width: 580px;
-      margin: 0 auto 30px;
-      color: #68645d;
-    }
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  color: white;
+  text-align: center;
+  padding: 54px 6% 112px;
+  isolation: isolate;
+}
 
-    .button {
-      display: inline-block;
-      background: var(--gold);
-      color: white;
-      text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 3px;
-      font-weight: bold;
-    }
+.hero:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 25%, rgba(198, 164, 106, .13), transparent 49%),
+    linear-gradient(180deg, #11110f, #171612);
+}
 
-    section { padding: 65px 8%; }
+.hero:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: min(760px, 88vw);
+  height: min(760px, 88vw);
+  border: 1px solid rgba(198, 164, 106, .09);
+  border-radius: 50%;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    h2 {
-      font-family: Georgia, serif;
-      font-size: 34px;
-      font-weight: normal;
-      text-align: center;
-    }
+.hero-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(440px, 84vw);
+  min-height: 150px;
+  margin: 0 auto 28px;
+  padding: 16px 24px;
+  border: 1px solid rgba(198, 164, 106, .28);
+  background: rgba(255, 255, 255, .025);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .22);
+}
 
-    .intro {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto;
-      color: #68645d;
-    }
+.hero-logo img {
+  display: block;
+  width: 100%;
+  max-height: 210px;
+  object-fit: contain;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 35px;
-    }
+.eyebrow {
+  color: var(--gold-light);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  margin: 10px 0 16px;
+}
 
-    .service {
-      border: 1px solid #e9e2d6;
-      padding: 26px;
-      border-radius: 5px;
-    }
+.hero h1 {
+  font: 400 clamp(40px, 6.4vw, 76px)/1.08 'Playfair Display', Georgia, serif;
+  max-width: 880px;
+  margin: 0 auto 22px;
+  letter-spacing: -.025em;
+}
 
-    .service h3 { font-size: 19px; }
-    .service p { color: #68645d; font-size: 14px; }
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold-light);
+}
 
-    /* GUÍA DE COLOR DENTAL */
-    .shade-guide { background: var(--cream); }
+.hero p {
+  max-width: 610px;
+  margin: 0 auto 31px;
+  color: #c8c4bb;
+  font-size: 16px;
+}
 
-    .shade-box {
-      max-width: 420px;
-      margin: 35px auto 0;
-      background: white;
-      border: 1px solid #e9e2d6;
-      border-radius: 5px;
-      padding: 28px 24px 24px;
-      text-align: center;
-    }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 23px;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .06em;
+  transition: background .2s, transform .2s;
+}
 
-    .tooth {
-      display: block;
-      width: 100%;
-      max-width: 190px;
-      height: auto;
-      margin: 0 auto 10px;
-      filter: drop-shadow(0 14px 18px rgba(120, 90, 30, 0.18));
-    }
+.button:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
 
-    .tooth .body { fill: var(--tooth); transition: fill 0.5s ease; }
-    .tooth .shine { fill: #fff; opacity: 0.55; }
+.button.outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+}
 
-    .shades {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 16px;
-    }
+.hero-note {
+  margin: 26px 0 0 !important;
+  font-size: 11px !important;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #8f8a80 !important;
+}
 
-    .shades button {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 2px solid #e9e2d6;
-      font: bold 12px Arial, sans-serif;
-      color: #4a4130;
-      cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s;
-    }
+.wrap {
+  width: min(1160px, 88%);
+  margin: auto;
+}
 
-    .shades button:hover { transform: scale(1.08); }
+section { padding: 92px 0; }
 
-    .shades button[aria-pressed="true"] {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px white, 0 0 0 5px var(--gold);
-    }
+.section-kicker {
+  text-align: center;
+  color: #9b7945;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
 
-    .shades button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+h2 {
+  font: 400 clamp(32px, 4.4vw, 48px)/1.2 'Playfair Display', Georgia, serif;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -.02em;
+}
 
-    #shadeName {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      margin: 0;
-    }
+.intro {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  color: #6a675f;
+}
 
-    #shadeText {
-      color: #68645d;
-      font-size: 14px;
-      margin: 4px auto 0;
-      max-width: 320px;
-      min-height: 3.4em;
-    }
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 43px;
+}
 
-    .shade-note {
-      font-size: 12px;
-      color: #68645d;
-      text-align: center;
-      margin: 18px auto 0;
-      max-width: 520px;
-    }
+.service {
+  padding: 31px 28px 30px;
+  border: 1px solid #e6dfd2;
+  background: white;
+  position: relative;
+  transition: transform .25s, box-shadow .25s;
+}
 
-    /* GALERÍA DE CASOS CLÍNICOS */
-    .cases {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
-      margin-top: 35px;
-    }
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(27, 24, 17, .08);
+}
 
-    .case {
-      border: 1px solid #e9e2d6;
-      border-radius: 5px;
-      padding: 18px;
-      background: white;
-      min-width: 0;
-    }
+.service .number {
+  color: #b79458;
+  font: 400 13px 'Playfair Display', serif;
+  letter-spacing: .1em;
+}
 
-    .case h3 {
-      font-family: Georgia, serif;
-      font-weight: normal;
-      font-size: 21px;
-      text-align: center;
-      margin-top: 5px;
-    }
+.service h3 {
+  font: 500 23px 'Playfair Display', Georgia, serif;
+  margin: 14px 0 9px;
+}
 
-    .comparison {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
+.service p {
+  color: #6a675f;
+  font-size: 14px;
+  margin: 0;
+}
 
-    .photo {
-      position: relative;
-      min-width: 0;
-    }
+.service:after {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: var(--gold);
+  margin-top: 22px;
+}
 
-    .photo img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 4px;
-    }
+.shade-guide { background: #efede7; }
 
-    .photo span {
-      display: block;
-      text-align: center;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: var(--gold);
-      padding-top: 8px;
-    }
+.shade-box {
+  max-width: 480px;
+  margin: 38px auto 0;
+  background: #fff;
+  border: 1px solid #e2dbcf;
+  padding: 30px 28px 26px;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(30, 25, 15, .06);
+}
 
-    .case p {
-      font-size: 14px;
-      color: #68645d;
-      text-align: center;
-      margin-bottom: 5px;
-    }
+.tooth {
+  display: block;
+  width: 190px;
+  height: auto;
+  margin: 0 auto 12px;
+  filter: drop-shadow(0 14px 18px rgba(120, 90, 30, .18));
+}
 
-    .contact {
-      background: var(--cream);
-      text-align: center;
-    }
+.tooth .body {
+  fill: var(--tooth);
+  transition: fill .4s;
+}
 
-    footer {
-      padding: 25px;
-      text-align: center;
-      font-size: 12px;
-      color: #68645d;
-    }
+.tooth .shine {
+  fill: #fff;
+  opacity: .55;
+}
 
-    @media (max-width: 700px) {
-      header { flex-direction: column; }
-      nav a { margin: 0 7px; }
-      .hero { padding: 60px 6%; }
-      section { padding: 45px 6%; }
-      .services { grid-template-columns: 1fr; }
-      .cases { grid-template-columns: 1fr; }
-    }
-  </style>
+.shades {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+  flex-wrap: wrap;
+  margin: 18px 0 15px;
+}
+
+.shades button {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  border: 2px solid #ded7cb;
+  font: bold 11px 'DM Sans', sans-serif;
+  color: #494234;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.shades button:hover { transform: scale(1.08); }
+
+.shades button[aria-pressed=true] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px white, 0 0 0 5px var(--gold);
+}
+
+.shades button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+#shadeName {
+  font: 500 22px 'Playfair Display', serif;
+  margin: 0;
+}
+
+#shadeText {
+  font-size: 14px;
+  color: #6a675f;
+  max-width: 340px;
+  min-height: 3em;
+  margin: 5px auto 0;
+}
+
+.shade-note {
+  text-align: center;
+  color: #777268;
+  font-size: 12px;
+  margin: 19px auto 0;
+  max-width: 560px;
+}
+
+.cases {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 42px;
+}
+
+.case {
+  border: 1px solid #e5ded1;
+  padding: 19px;
+  background: white;
+}
+
+.case h3 {
+  text-align: center;
+  font: 500 22px 'Playfair Display', Georgia, serif;
+  margin: 5px 0 17px;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.photo { min-width: 0; }
+
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  background: #eee;
+}
+
+.photo span {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: #9b7945;
+  padding-top: 8px;
+}
+
+.case p {
+  text-align: center;
+  color: #6a675f;
+  font-size: 13px;
+  margin: 14px 0 2px;
+}
+
+.contact {
+  background: var(--ink);
+  color: white;
+  text-align: center;
+}
+
+.contact .section-kicker { color: var(--gold-light); }
+.contact .intro { color: #c1bdb4; }
+.contact .button { margin-top: 28px; }
+
+.contact .location {
+  color: #bcb7ad;
+  font-size: 13px;
+  margin: 19px 0 0;
+}
+
+.contact .location strong {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+footer {
+  padding: 27px 6%;
+  background: #0b0b0a;
+  color: #aaa69c;
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+
+footer p {
+  margin: 4px 0 0;
+  color: #77736a;
+}
+
+@media (max-width: 760px) {
+  .nav-wrap { padding: 11px 6%; }
+
+  .brand img {
+    width: 152px;
+    max-height: 56px;
+  }
+
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 15px 6% 22px;
+    background: #11110f;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 11px 0; }
+  .nav-links .nav-cta { text-align: center; margin-top: 8px; }
+  .hero { padding: 40px 6% 78px; }
+
+  .hero-logo {
+    min-height: 120px;
+    margin-bottom: 22px;
+  }
+
+  .hero-logo img { max-height: 155px; }
+  .hero p { font-size: 15px; }
+  section { padding: 70px 0; }
+  .services { grid-template-columns: 1fr; gap: 13px; }
+  .service { padding: 25px; }
+  .cases { grid-template-columns: 1fr; }
+  .wrap { width: 88%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *:before, *:after { transition: none !important; }
+}
+</style>
 </head>
+
 <body>
+<div class="topline"></div>
 
-  <header>
-    <a class="brand" href="#inicio">
-  <img src="images/logo.png" alt="Odontología Camilo Castillo">
-</a>
-    <nav>
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#inicio" aria-label="Camilo Castillo, inicio">
+      <img src="images/logo.png" alt="Camilo Castillo Odontología">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+      Menú
+    </button>
+
+    <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#color">Guía de color</a>
+      <a href="#casos">Casos</a>
+      <a class="nav-cta" href="#contacto">Agenda tu valoración</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="eyebrow">Odontología estética & restaurativa · Popayán</div>
-      <h1>Una sonrisa que refleje tu esencia.</h1>
-      <p>
-        Atención odontológica personalizada en estética dental
-        y rehabilitación oral, con un enfoque natural y conservador.
-      </p>
-      <a class="button" href="#contacto">Solicitar valoración</a>
-    </section>
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-logo">
+      <img src="images/logo.png" alt="Logo de Camilo Castillo Odontología">
+    </div>
 
-    <section id="servicios">
-      <h2>Mis servicios</h2>
-      <p class="intro">
-        Planes de tratamiento personalizados según tus necesidades,
-        expectativas y condiciones clínicas.
-      </p>
+    <p class="eyebrow">Odontología estética y restaurativa · Popayán</p>
+    <h1>Una sonrisa que refleje <em>tu esencia.</em></h1>
+    <p>Atención odontológica personalizada en estética dental y rehabilitación oral, con un enfoque natural, cuidadoso y pensado para ti.</p>
+    <a class="button" href="#contacto">Solicitar valoración <span aria-hidden="true">↗</span></a>
+    <p class="hero-note">Cuidado experto · Resultados naturales</p>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <p class="section-kicker">Tratamientos personalizados</p>
+      <h2>Una atención a tu medida</h2>
+      <p class="intro">Planes de tratamiento definidos según tus necesidades, expectativas y condiciones clínicas.</p>
 
       <div class="services">
         <article class="service">
+          <span class="number">01 / ESTÉTICA</span>
           <h3>Diseño de sonrisa</h3>
-          <p>
-            Carillas en resina de alta estética muy similar a la cerámica,
-            con planificación individualizada y enfoque conservador
-            según los gustos y las necesidades de cada paciente.
-          </p>
+          <p>Carillas en resina de alta estética con planificación individualizada y un enfoque conservador según tus gustos y necesidades.</p>
         </article>
 
         <article class="service">
+          <span class="number">02 / REHABILITACIÓN</span>
           <h3>Rehabilitación oral</h3>
-          <p>
-            Te orientamos en diferentes alternativas
-            de tratamiento para recuperar función,
-            anatomía y estética de todos tus dientes.
-          </p>
+          <p>Alternativas de tratamiento para recuperar la función, anatomía y estética de tus dientes.</p>
         </article>
 
         <article class="service">
-          <h3>Blanqueamiento Dental</h3>
-          <p>
-            Opcion ideal para un cambio notable
-            sin desgastes, ni sensibilidad dental, 
-            logra recuperar el tono blanco natural de tus dientes.
-          </p>
+          <span class="number">03 / BLANQUEAMIENTO</span>
+          <h3>Blanqueamiento dental</h3>
+          <p>Una opción para aclarar el tono de tus dientes con una evaluación previa y acompañamiento profesional.</p>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- GUÍA DE COLOR DENTAL (interactiva) -->
-    <section class="shade-guide" id="color">
+  <section class="shade-guide" id="color">
+    <div class="wrap">
+      <p class="section-kicker">Explora los tonos</p>
       <h2>Guía de color dental</h2>
-      <p class="intro">
-        Toca un tono y observa cómo cambia la apariencia del diente.
-        Así podemos conversar sobre el color que te gustaría lograr.
-      </p>
+      <p class="intro">Selecciona un tono para visualizar una referencia y conversar sobre el resultado que te gustaría lograr.</p>
 
       <div class="shade-box">
-        <svg class="tooth" viewBox="0 0 200 250" role="img" aria-label="Diente incisivo central que cambia de tono">
+        <svg class="tooth" viewBox="0 0 200 250" role="img" aria-label="Ilustración de un diente">
           <path class="body" d="M100 12c-30 0-62 8-70 34-6 22 2 46 6 70 4 26 6 62 14 100 3 12 12 16 18 6 8-14 10-48 16-48h32c6 0 8 34 16 48 6 10 15 6 18-6 8-38 10-74 14-100 4-24 12-48 6-70-8-26-40-34-70-34z"/>
           <path class="shine" d="M62 50c6-14 22-20 40-20-20 4-30 14-34 30-3 12-4 28-2 44-8-20-8-42-4-54z"/>
         </svg>
 
-        <div class="shades" id="shades" role="group" aria-label="Tonos de la guía"></div>
+        <div class="shades" id="shades" role="group" aria-label="Tonos disponibles"></div>
         <p id="shadeName"></p>
         <p id="shadeText" aria-live="polite"></p>
       </div>
 
-      <p class="shade-note">
-        Referencia ilustrativa: los colores varían según la pantalla.
-        El tono final se define en la valoración clínica.
-      </p>
-    </section>
+      <p class="shade-note">Referencia ilustrativa: los colores pueden variar según la pantalla. El tono indicado se define en una valoración clínica.</p>
+    </div>
+  </section>
 
-    <!-- CASOS CLÍNICOS: ANTES Y DESPUÉS -->
-    <section id="casos">
+  <section id="casos">
+    <div class="wrap">
+      <p class="section-kicker">Experiencias reales</p>
       <h2>Transformaciones de sonrisas</h2>
-
-      <p class="intro">
-        Cada sonrisa es única. Conoce algunos casos clínicos
-        realizados con un enfoque personalizado y conservador.
-      </p>
+      <p class="intro">Cada sonrisa es única. Conoce algunos casos clínicos realizados con un enfoque personalizado.</p>
 
       <div class="cases">
-
-        <!-- CASO 1 -->
         <article class="case">
           <h3>Diseño de sonrisa en resina</h3>
-
           <div class="comparison">
             <div class="photo">
-              <img src="images/caso1-antes.jpg"
-                   alt="Antes del tratamiento odontológico"
-                   loading="lazy">
+              <img src="images/caso1-antes.jpg" alt="Antes del tratamiento odontológico" loading="lazy">
               <span>ANTES</span>
             </div>
-
             <div class="photo">
-              <img src="images/caso1-despues.jpg"
-                   alt="Después del tratamiento odontológico"
-                   loading="lazy">
+              <img src="images/caso1-despues.jpg" alt="Después del tratamiento odontológico" loading="lazy">
               <span>DESPUÉS</span>
             </div>
           </div>
-
-          <p>
-            Resultado individualizado según las condiciones
-            clínicas y las expectativas del paciente.
-          </p>
+          <p>Resultado individualizado según las condiciones clínicas y expectativas del paciente.</p>
         </article>
 
-        <!-- CASO 2 -->
         <article class="case">
           <h3>Rehabilitación estética</h3>
-
           <div class="comparison">
             <div class="photo">
-              <img src="images/caso2-antes.jpg"
-                   alt="Antes de la rehabilitación estética"
-                   loading="lazy">
+              <img src="images/caso2-antes.jpg" alt="Antes de la rehabilitación estética" loading="lazy">
               <span>ANTES</span>
             </div>
-
             <div class="photo">
-              <img src="images/caso2-despues.jpg"
-                   alt="Después de la rehabilitación estética"
-                   loading="lazy">
+              <img src="images/caso2-despues.jpg" alt="Después de la rehabilitación estética" loading="lazy">
               <span>DESPUÉS</span>
             </div>
           </div>
-
-          <p>
-            Tratamiento planificado de acuerdo con las
-            necesidades de cada paciente.
-          </p>
+          <p>Tratamiento planificado de acuerdo con las necesidades de cada paciente.</p>
         </article>
-
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact" id="contacto">
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <p class="section-kicker">Primer paso hacia tu sonrisa</p>
       <h2>Hablemos de tu sonrisa</h2>
-      <p class="intro">
-        Escríbeme para agendar tu valoración
-        y recibir información sobre tu tratamiento ideal.
-      </p>
-      <br>
-      <!-- Reemplaza el número de ejemplo por tu WhatsApp -->
-      <a class="button"
-         href="https://wa.me/573127333622"
-         target="_blank"
-         rel="noopener noreferrer">
-        Contactar por WhatsApp
+      <p class="intro">Escríbeme para agendar tu valoración y recibir información sobre tu tratamiento.</p>
+      <a class="button" href="https://wa.me/573127333622" target="_blank" rel="noopener noreferrer">
+        Contactar por WhatsApp <span aria-hidden="true">↗</span>
       </a>
-      <p>Popayán, Cauca, Colombia</p>
-    </section>
-  </main>
+      <p class="location"><strong>Popayán, Cauca</strong> · Colombia</p>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    Camilo Castillo Odontología  · Popayán, Colombia
-    <p>La indicación de cada tratamiento requiere valoración clínica.</p>
-  </footer>
+<footer>
+  Camilo Castillo Odontología · Popayán, Colombia
+  <p>La indicación de cada tratamiento requiere valoración clínica.</p>
+</footer>
 
-  <script>
-    /* GUÍA DE COLOR DENTAL: k = nombre, c = color, t = descripción */
-    const shades = [
-      { k: "BL1", c: "#F7F2E8", t: "Tono de blanqueamiento. Muy claro, el más luminoso de la escala." },
-      { k: "B1",  c: "#F1E7D3", t: "Claro y neutro. Común en dientes jóvenes y en resultados de carillas." },
-      { k: "A1",  c: "#EBDDC0", t: "Claro con ligero matiz rojizo. Un punto de partida muy natural." },
-      { k: "A2",  c: "#E4D2AE", t: "Muy habitual. Equilibrado y cálido." },
-      { k: "A3",  c: "#DAC096", t: "Más saturado y cálido. Útil para ver cuánto puede aclarar un blanqueamiento." }
-    ];
+<script>
+const shades = [
+  { k: 'BL1', c: '#F7F2E8', t: 'Tono de blanqueamiento muy claro y luminoso.' },
+  { k: 'B1', c: '#F1E7D3', t: 'Claro y neutro, una referencia luminosa.' },
+  { k: 'A1', c: '#EBDDC0', t: 'Claro con un matiz cálido y natural.' },
+  { k: 'A2', c: '#E4D2AE', t: 'Un tono equilibrado y cálido.' },
+  { k: 'A3', c: '#DAC096', t: 'Un tono más saturado y cálido.' }
+];
 
-    const box = document.getElementById("shades");
-    const nm  = document.getElementById("shadeName");
-    const tx  = document.getElementById("shadeText");
+const box = document.getElementById('shades');
+const name = document.getElementById('shadeName');
+const text = document.getElementById('shadeText');
 
-    function pick(i) {
-      const s = shades[i];
-      document.documentElement.style.setProperty("--tooth", s.c);
-      nm.textContent = "Tono " + s.k;
-      tx.textContent = s.t;
-      [...box.children].forEach((b, j) => b.setAttribute("aria-pressed", j === i));
-    }
+function pick(i) {
+  const shade = shades[i];
+  document.documentElement.style.setProperty('--tooth', shade.c);
+  name.textContent = 'Tono ' + shade.k;
+  text.textContent = shade.t;
 
-    shades.forEach((s, i) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.textContent = s.k;
-      b.style.background = s.c;
-      b.setAttribute("aria-label", "Tono " + s.k);
-      b.addEventListener("click", () => pick(i));
-      box.appendChild(b);
-    });
+  [...box.children].forEach((button, j) => {
+    button.setAttribute('aria-pressed', String(j === i));
+  });
+}
 
-    pick(2);
-  </script>
+shades.forEach((shade, i) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.textContent = shade.k;
+  button.style.background = shade.c;
+  button.setAttribute('aria-label', 'Tono ' + shade.k);
+  button.setAttribute('aria-pressed', 'false');
+  button.addEventListener('click', () => pick(i));
+  box.appendChild(button);
+});
 
+pick(2);
+
+const menu = document.querySelector('.menu-toggle');
+const nav = document.getElementById('nav-links');
+
+menu.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  menu.setAttribute('aria-expanded', String(open));
+  nav.classList.toggle('open', open);
+});
+
+nav.addEventListener('click', event => {
+  if (event.target.closest('a')) {
+    nav.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  }
+});
+</script>
 </body>
 </html>
